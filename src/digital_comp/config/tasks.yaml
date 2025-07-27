@@ -1,0 +1,20 @@
+intent_task:
+  description: >
+    "Classify this query as either 'fraud', 'scheme', or 'general'"" + query{"user_query"}
+  expected_output: >
+    Only return one word 'scheme', 'fraud', or 'general'.
+  agent: intent_detector
+
+scheme_lookup_task:
+  description: >
+    "Based on the user's query, find all relevant Indian government schemes. Provide scheme name, eligibility, required documents, and how to apply."
+  expected_output: >
+   "Scheme name, eligibility criteria, documents required, how to apply steps."
+  agent: smart_schemer
+
+fraud_advice_task:
+  description: >
+   "User is concerned about scams or fake schemes. Give safety tips, red flags, and trusted links."
+  expected_output: >
+   "Clear list of safety steps, red flags to look out for, and links to official websites."
+  agent: fraud_expert
